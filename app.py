@@ -43,13 +43,14 @@ def handle_message(event):
         r = '哈囉~'
     elif msg == '陪我聊天':
         r = '來吧~'
-    elif ['累', '忙'] in msg:
-        r = '辛苦你了!'
     elif msg in ['難過', '傷心', '嗚嗚']:
         r = '笑一個吧^_<'
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=r))
+        StickerSendMessage(
+    package_id='1',
+    sticker_id='1'
+))
 
 
 if __name__ == "__main__":
